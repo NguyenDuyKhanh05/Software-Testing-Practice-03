@@ -63,3 +63,16 @@ class BlackBoxExercises:
             gt *= i
             tong += gt
         return tong
+        def tinh_chu_vi_hcn(a, b):
+    # Xử lý dữ liệu lỗi (Issue #2)
+    if a <= 0 or b <= 0: 
+        return "Dữ liệu không hợp lệ"
+    return 2 * (a + b)
+
+def la_so_nguyen_to(n):
+    # Xử lý biên và số âm (Issue #2)
+    if not isinstance(n, int) or n < 2: 
+        return False
+    for i in range(2, int(math.sqrt(n)) + 1):
+        if n % i == 0: return False
+    return True
